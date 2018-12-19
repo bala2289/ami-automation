@@ -17,6 +17,7 @@
   "provisioners": [{
     "type": "shell",
     "inline": [
+        "sudo su",
         "apt-get remove --purge landscape-common",
         "apt-get install figlet",
         "touch /etc/motd",
