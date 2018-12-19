@@ -16,12 +16,13 @@ pipeline {
 
         stage('packer validate template') {
             steps {
-                sh 'packer validate create-ami.json'
+                sh 'chmod +x packer'
+                sh './packer validate create-ami.json'
                 }
         }
         stage('packer build AMI') {
             steps {
-                sh 'packer build create-ami.json'
+                sh './packer build create-ami.json'
                 sh 'echo ami-id:`cat manifest.json | jq -r \'.builds[-1].artifact_id\' |  cut -d\':\' -f2`'
             }
         }
