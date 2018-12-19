@@ -9,7 +9,7 @@
     "access_key": "{{env `aws_access_key`}}",
     "secret_key": "{{env `aws_secret_key`}}",
     "region": "us-east-2",
-    "source_ami": "",
+    "source_ami": "ami-0653e888ec96eab9b",
     "instance_type": "t2.micro",
     "ssh_username": "ec2-user",
     "ami_name": "Bluejeans-ubuntu16-04-base-{{isotime \"2006-01-02T1504\"}}"

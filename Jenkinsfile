@@ -7,11 +7,15 @@ pipeline {
                 sh 'echo "pipeline initiated.."'
             }
         }
+        stage('Clone repository') {
+            steps {
+                sh 'git clone https://github.com/bala2289/ami-automation.git'
+                sh 'cd ami-automation'
+                }
+        }
+
         stage('packer validate template') {
             steps {
-                sh 'git clone https://github.com/bala2289/packer-test.git'
-                sh 'cd packer-test'
-                sh  builddate=`date +"%m-%d-%y-%H-%M"`
                 sh 'packer validate create-ami.json'
                 }
         }
