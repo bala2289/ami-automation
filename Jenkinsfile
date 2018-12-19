@@ -5,6 +5,7 @@ pipeline {
         stage('pipeline start') {
             steps {
                 sh 'echo "pipeline initiated.."'
+                sh 'rm -r ami-automation'
             }
         }
         stage('Clone repository') {
@@ -31,7 +32,7 @@ pipeline {
     post { 
         always { 
             echo 'Cleaning up..'
-            sh 'rm manifest.json'
+            sh 'cd ..; rm -r ami-automation'
         }
     }
 }
