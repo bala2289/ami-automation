@@ -1,13 +1,13 @@
 {
   "_comment" : "Packer Template to create base ubuntu 16.04 AMI",
   "variables": {
-    "aws_access_key": "",
-    "aws_secret_key": ""
+    "aws_access_key": "{{env `aws_access_key`}}",
+    "aws_secret_key": "{{env `aws_secret_key`}}"
   },
   "builders": [{
     "type": "amazon-ebs",
-    "access_key": "{{env `aws_access_key`}}",
-    "secret_key": "{{env `aws_secret_key`}}",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
     "region": "us-east-2",
     "source_ami": "ami-0653e888ec96eab9b",
     "instance_type": "t2.micro",
