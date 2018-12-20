@@ -13,7 +13,7 @@ pipeline {
                 sh 'git clone https://github.com/bala2289/ami-automation.git'
                 sh 'cd ami-automation'
                 }
-        }''''
+        }'''
 
         stage('packer validate template') {
             steps {
