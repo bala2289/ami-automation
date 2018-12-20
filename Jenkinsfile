@@ -5,7 +5,6 @@ pipeline {
         stage('pipeline start') {
             steps {
                 sh 'echo "pipeline initiated.."'
-                sh 'rm -r ami-automation'
             }
         }
         stage('packer validate template') {
