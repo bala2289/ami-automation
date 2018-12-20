@@ -8,12 +8,12 @@ pipeline {
                 sh 'rm -r ami-automation'
             }
         }
-        stage('Clone repository') {
+        '''stage('Clone repository') {
             steps {
                 sh 'git clone https://github.com/bala2289/ami-automation.git'
                 sh 'cd ami-automation'
                 }
-        }
+        }''''
 
         stage('packer validate template') {
             steps {
@@ -32,7 +32,7 @@ pipeline {
     post { 
         always { 
             echo 'Cleaning up..'
-            sh 'cd ..; rm -r ami-automation'
+            sh 'rm manifest.json'
         }
     }
 }
