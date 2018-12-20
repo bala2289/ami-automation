@@ -8,13 +8,6 @@ pipeline {
                 sh 'rm -r ami-automation'
             }
         }
-        '''stage('Clone repository') {
-            steps {
-                sh 'git clone https://github.com/bala2289/ami-automation.git'
-                sh 'cd ami-automation'
-                }
-        }'''
-
         stage('packer validate template') {
             steps {
                 sh 'chmod +x packer'
