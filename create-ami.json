@@ -18,8 +18,14 @@
     "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
     "type": "shell",
     "inline": [
-        "echo 'test ami > /test.txt'",
-        "sudo hostname"
+        "sudo hostname",
+        "sudo killall apt-get",
+        "sudo apt-get remove --purge landscape-common",
+        "sudo apt-get install figlet",
+        "touch motd",
+        "figlet \"welcome to bluejeans\" > motd",
+        "sudo cp motd /etc/motd",
+        "sudo chown root:root /etc/motd"
     ]
   }],
   "post-processors": [
