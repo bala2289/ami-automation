@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh './packer build create-ami.json'
-                sh 'cat manifest.json |grep ami|cut -d ":" -f3|tr -d \",
+                sh 'cat manifest.json |grep ami|cut -d ":" -f3|tr -d \"\,
             }
         }
     
