@@ -18,7 +18,7 @@
     "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
     "type": "shell",
     "inline": [
-        "echo 'test ami > ~/test.txt'",
+        "echo 'test ami > /test.txt'",
         "sudo hostname"
     ]
   }],
