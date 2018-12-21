@@ -15,14 +15,14 @@
     "ami_name": "Bluejeans-ubuntu16-04-base-{{isotime \"2006-01-02T1504\"}}"
   }],
   "provisioners": [{
-    "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
+    //"execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
     "type": "shell",
     "inline": [
-        "sudo su",
-        "apt-get remove --purge landscape-common",
-        "apt-get install figlet",
-        "touch /etc/motd",
-        "figlet \"welcome to bluejeans\" > /etc/motd"
+        //"apt-get remove --purge landscape-common",
+        //"apt-get install figlet",
+        //"touch /etc/motd",
+        //"figlet \"welcome to bluejeans\" > /etc/motd"
+        "echo 'test ami > ~/test.txt'"
     ]
   }]
 }
