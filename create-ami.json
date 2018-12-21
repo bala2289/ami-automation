@@ -19,7 +19,6 @@
     "type": "shell",
     "inline": [
         "sudo hostname",
-        "sudo killall apt-get",
         "sudo apt-get remove --purge landscape-common",
         "sudo apt-get install figlet",
         "touch motd",
