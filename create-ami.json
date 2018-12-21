@@ -15,10 +15,20 @@
     "ami_name": "Bluejeans-ubuntu16-04-base-{{isotime \"2006-01-02T1504\"}}"
   }],
   "provisioners": [{
-    
+    "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'" 
     "type": "shell",
     "inline": [
         "echo 'test ami > ~/test.txt'"
+        "sudo hostname"
     ]
-  }]
+  }],
+  "post-processors": [
+    [
+      {
+        "output": "manifest.json",
+        "strip_path": true,
+        "type": "manifest"
+      }
+    ]
+  ]
 }
