@@ -26,7 +26,7 @@ pipeline {
     post { 
         always { 
             echo 'Cleaning up..'
-            sh 'rm manifest.json'
+            '''sh 'rm manifest.json'''''
         }
     }
 }
